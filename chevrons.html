@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Chevron Stylings</title>
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+            font-size: 1em;
+            -ms-text-size-adjust: 1em;
+            -webkit-text-size-adjust: 1em;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        body {
+            margin: 0;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            line-height: 1.42857143;
+            color: #333333;
+            background-color: #ffffff;
+        }
+        #wrapper {
+            width: 600px;
+            margin: 50px auto;
+        }
+        ul.chevrons {
+            border: 1px solid #a3a3a3;
+            padding: 0;
+            margin: 0;
+            height: 2.5em;
+            font-size: 1.125em;
+            background-color: #e3edf9;
+            overflow: hidden;
+            width: 100%;
+        }
+        ul.chevrons li {
+            list-style: none;
+            text-align: center;
+            line-height: 2.5em;
+            float: left;
+        }
+        ul.chevrons li {
+            width: 25%; /* This changes based on how many items are in the flow. 3 items = 33% and 2 items = 50% */
+        }
+        ul.chevrons li a {
+            width: 100%;
+            color: #212121;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            text-indent: 0.75em;
+        }
+        ul.chevrons li a.selected {
+            background-color: #013e75;
+            color: #fff;
+        }
+        ul.chevrons li a.previous { color: #6c6c6c; }
+        ul.chevrons li a:before, ul.chevrons li a:after {
+            content: " ";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 1.5em solid transparent;
+            border-bottom: 1.5em solid transparent;
+            position: absolute;
+            top: 50%;
+            margin-top: -1.5em;
+            left: 100%;
+        }
+        ul.chevrons li a:before {
+            border-left: 0.75em solid #fff;
+            margin-left: -0px;
+            z-index: 1;
+        }
+        ul.chevrons li a:after {
+            border-left: 0.75em solid #e3edf9;
+            margin-left: -2px;
+            z-index: 2;
+        }
+        ul.chevrons li a.selected:after { border-left: 0.75em solid #013e75; }
+        ul.chevrons li:last-child a:before, ul.chevrons li:last-child a:after { display: none; }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <ul class="chevrons">
+            <li><a href="#" class="previous">Step 1</a></li>
+            <li><a href="#" class="selected">Step 2</a></li>
+            <li><a href="#">Step 3</a></li>
+            <li><a href="#">Step 4</a></li>
+        </ul>
+    </div>
+</body>
+</html>
